@@ -5,6 +5,8 @@ VisualStudioVersion = 12.0.30723.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApiResourceOwnerFlow", "WebApiResourceOwnerFlow\WebApiResourceOwnerFlow.csproj", "{C0CA91F4-FF95-498C-819E-9616AC6B1271}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApiResourceOwnerFlowSpecs", "WebApiResourceOwnerFlowSpecs\WebApiResourceOwnerFlowSpecs.csproj", "{DE4DBE6C-A8A6-4261-9032-24C8DEF178EC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{C0CA91F4-FF95-498C-819E-9616AC6B1271}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C0CA91F4-FF95-498C-819E-9616AC6B1271}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C0CA91F4-FF95-498C-819E-9616AC6B1271}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DE4DBE6C-A8A6-4261-9032-24C8DEF178EC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DE4DBE6C-A8A6-4261-9032-24C8DEF178EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DE4DBE6C-A8A6-4261-9032-24C8DEF178EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DE4DBE6C-A8A6-4261-9032-24C8DEF178EC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
