@@ -44,7 +44,7 @@ namespace WebApiResourceOwnerFlowSpecs.IntergrationTests
             using (var server = TestServer.Create<Startup>())
             {
                 var httpClient = server.HttpClient;
-                await httpClient.AuthorizeWith("maurice", "pass");
+                await httpClient.AuthenticateWith("maurice", "pass");
 
                 var response = await httpClient.GetStringAsync("/api/demo/");
 
@@ -59,7 +59,7 @@ namespace WebApiResourceOwnerFlowSpecs.IntergrationTests
             {
                 var httpClient = server.HttpClient;
 
-                await httpClient.AuthorizeWith("nouser", "nopass");
+                await httpClient.AuthenticateWith("nouser", "nopass");
 
                 Func<Task> request = async () => await httpClient.GetStringAsync("/api/demo/");
                 request.ShouldThrow<HttpRequestException>()

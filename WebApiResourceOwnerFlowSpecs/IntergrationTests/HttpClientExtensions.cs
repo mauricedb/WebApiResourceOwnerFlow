@@ -8,7 +8,7 @@ namespace WebApiResourceOwnerFlowSpecs.IntergrationTests
 {
     public static class HttpClientExtensions
     {
-        public static async Task AuthorizeWith(this HttpClient httpClient, string username, string password)
+        public static async Task AuthenticateWith(this HttpClient httpClient, string username, string password)
         {
             var tokenDetails = new[]
             {
