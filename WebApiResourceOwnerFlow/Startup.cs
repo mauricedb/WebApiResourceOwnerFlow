@@ -11,7 +11,7 @@ namespace WebApiResourceOwnerFlow
     {
         public void Configuration(IAppBuilder app)
         {
-            var provider = new OAuthAuthorizationServerProvider()
+            var provider = new OAuthAuthorizationServerProvider
             {
                 OnValidateClientAuthentication = ctx =>
                 {
@@ -32,7 +32,7 @@ namespace WebApiResourceOwnerFlow
                 }
             };
 
-            var options = new OAuthAuthorizationServerOptions()
+            var options = new OAuthAuthorizationServerOptions
             {
                 TokenEndpointPath = new PathString("/token"),
                 Provider = provider,
@@ -40,10 +40,8 @@ namespace WebApiResourceOwnerFlow
             };
             app.UseOAuthAuthorizationServer(options);
 
-            app.UseOAuthBearerAuthentication(new OAuthBearerAuthenticationOptions()
-            {
-                AuthenticationType = "Bearer"
-            });
+            var authenticationOptions = new OAuthBearerAuthenticationOptions();
+            app.UseOAuthBearerAuthentication(authenticationOptions);
 
 
             app.Map("/api", apiApp =>
@@ -51,7 +49,7 @@ namespace WebApiResourceOwnerFlow
                 var config = new HttpConfiguration();
                 config.MapHttpAttributeRoutes();
                 config.SuppressDefaultHostAuthentication();
-                config.Filters.Add(new HostAuthenticationAttribute("Bearer"));
+                config.Filters.Add(new HostAuthenticationAttribute(authenticationOptions.AuthenticationType));
                 apiApp.UseWebApi(config);
             });
         }
